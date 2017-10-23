@@ -169,11 +169,11 @@
         </div>
     </div>
     <script type="text/javascript">
-    // declare global variables
+
     var nameVal, imageVal, q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val, newPerson;
     $("#submit").on("click", function(event) {
         event.preventDefault();
-        // set global variable values for multiple uses in this and other functions
+
         nameVal = $("#name").val();
         imageVal = $("#image").val();
         q1Val = parseInt($("#q1").val());
@@ -192,11 +192,12 @@
             responses: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
             total: q1Val + q2Val + q3Val + q4Val + q5Val + q6Val + q7Val + q8Val + q9Val + q10Val
         };
-        // declare and set local variables
+
         var modalTitle = $(".modal-title");
         var modalBody = $(".modal-body");
         var modal = $("#modal");
         var apiFriendsRoute = "/api/friends";
+        
         if (formIsValid()) {
             $.get(apiFriendsRoute, function(data) {
                 var match = makeMatch(data);
